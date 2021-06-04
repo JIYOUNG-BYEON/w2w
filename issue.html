@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css"
+      media="screen" href="main.css">
+
+      <style>
+
+        .featured{
+          width:375px;
+          height:310px;
+          background-image:url("img/구름.jpg");
+          /* backgrond에 이미지 불러오기 */
+          background-size:cover;
+          /* 백그라운드 이미지 크기조정 , cover을 쓰면
+          백그라운드 크기에 맞춰 이미지 자동 조절 */
+          position:relative;
+        }
+        .count{
+          font-size:30px;
+          position:absolute;
+          top:30px;
+          right:26px;
+        }
+        .text-area{
+          position:absolute;
+          bottom:36px;
+          left:24px;
+        }
+        .text-area p{
+          margin-top:0;
+        }
+        .text-area title{
+          margin-bottom:12px;
+        }
+        sup{
+          font-size:10px;
+        }
+
+  /* 이미지 크기 조절 하는 방법
+  .swiper img{
+    width:136px;
+    height:80px;
+
+  } */
+      .swiper{
+        white-space:nowrap;
+        /* white-space=nomal이면 화면에서 공간이 부족하면 자동으로 밑으로 내려감
+        white-space:nowrap; 이렇게 적용시 밑으로 안내려감, 대신 사진 잘림
+         */
+         overflow-x:scroll;
+         /* 사진 잘리는걸 방지하기 위해 가로축 스크롤 적용 */
+         margin-top:24px;
+         padding-left:24px;
+         /*패딩 대신 margin-left:24px; 라고 하면 스크롤도 같이 마진을 적용 받아서
+         스크롤이 벽에서 때어짐  */
+         padding-right:24px;
+         padding-bottom:24px;
+      }
+      .swiper li{
+        width:136px;
+        height:80px;
+        background-size:cover;
+        background-position:center;
+        display:inline-block;
+        border-radius:5px;
+        margin-right:10px;
+        /* li테그들의 오른쪽에 마진을 주면 현재 가로 정렬 해놨기 때문에
+        이미지와 이미지 사이의 거리가 멀어짐 */
+        /* 가로정렬 하기 위해 사용한 display:inline-block 특성으로 이미지 사이에
+        기본 마진값이 적용 되어있음, 현재 보이는 거리는 가로정렬 위한 기본 마진+우리가 넣어준
+        오른쪽 마진 값 10  */
+      }
+      .swiper li:nth-child(1){
+        background-image:url("img/밤 별하늘.jpg");
+      }
+      .swiper li:nth-child(2){
+        background-image:url("img/밤별하늘2.jpg");
+      }
+      .swiper li:nth-child(3){
+        background-image:url("img/밤하늘 3.jpg");
+      }
+
+
+      </style>
+
+  </head>
+  <body>
+<!-- 가장 먼저 그룹 짓기 , 우선 div테그로 만들어 놓으셈 -->
+<!-- 제목은 h1, 문장은p -->
+  <div class="featured">
+    <div class="count">8</div>
+    <div class="text-area">
+      <h1 class="title">Issues <sup>1</sup></h1>
+      <!-- sup테그=글자 상단 표기 / sub테그 = 글자 하단표시하기  -->
+      <p>We'll make a mobile magazine <br>
+        using html, css only.
+        </p>
+    </div>
+  </div>
+
+  <ul class="swiper">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <!-- li테그 속성상 자동으로 줄바꿈 (세로정렬)
+가로 정렬 하고 싶으면 display:inline-block으로 바꾸기-->
+  <!-- 이미지 불러오기:<img src="이미지가 있는 폴더명/파일명"/> -->
+<!-- 위도 리스트로 표기해도 되고, div로 표기해도 됨 -->
+
+<!-- ol=순서있는 리스트 , ul:순서 없는 리스트
+ol,ul의 자녀 테그= li:리스트 아이템 -->
+  <ul class="list">
+    <li class="item">
+      <div>1</div>
+      <div class="title">Hello World</div>
+      <div class="desc">
+        Lorem Ipsum is simply dummy tect of the<br>
+        printing and typesetting industry.
+      </div>
+    </li>
+
+    <li class="item">
+      <div>2</div>
+      <div class="title">Hello World</div>
+      <div class="desc">
+        Lorem Ipsum is simply dummy tect of the<br>
+        printing and typesetting industry.
+      </div>
+    </li>
+
+    <li class="item">
+      <div>3</div>
+      <div class="title">Hello World</div>
+      <div class="desc">
+        Lorem Ipsum is simply dummy tect of the<br>
+        printing and typesetting industry.
+      </div>
+    </li>
+
+  </ul>
+
+
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css"
+      media="screen" href="main.css">
+<!-- css파일 불러줌 -->
+<style>
+  .volume{
+    font-wight:600;
+    font-size:40px;
+    margin-bottom: 85px;
+
+  }
+
+  /* .text-area h1{
+     textarea테그 안에 h1테그만 해당
+        } */
+
+  .line{
+    background-color:#FFE6CF;
+    width:46px;
+    height:1px;
+    display:inline-block;
+    /* 글자 사이 공간이 사라지며 공간이 옆으로 온다 */
+    position:relative;
+    top:-7px;
+    opacity:0.2;
+  }
+
+  #circle-wrapper{
+
+    position:relative;
+    /* 첫번째 원의 top=0 으로 준것이 티가 안남=>부모를 relative줬기 때문 */
+    margin-left:24px;
+    margin-top:42px;
+
+  }
+
+  .circle{
+    width:246px;
+    height:246px;
+    background-color:red;
+    /* width,height는 공간의 개념 */
+    border-radius:50%;
+    /* border-radius=도형의 각을 둥글게 만들어줌,20px면 20만큼 둥글게
+    50%면 반절만큼 둘글게 돌림=원 */
+    position:absolute;
+    /* 세개의 원이 한 좌표에 합쳐짐 */
+  }
+
+  .circle:nth-child(1){
+    /* circle테그의 첫번째꺼 or nth-first라고 표현 마지막은 nth-last*/
+    background-color:transparent;
+    border:1px solid black;
+    opacity:0.2;
+    /* transparent=투명,opacity=불투명도 */
+    /*
+    border:100px;
+    box-sizing:border-box;
+     테두리의 두께를 늘릴때 테두리가 안쪽으로 커지는 것이 아닌 밖으로 커지기 때문에
+     도형의 크기도 같이 커진다 , 이것을 방지하기 위해 안쪾으로 커지려면
+     box-sizing:border-box; 이렇게 쓰면 됨*/
+     top:0;
+  }
+
+  .circle:nth-child(2){
+    background-color:#ffc000;
+    left:100px;
+  }
+  .circle:nth-child(3){
+    background-color:#fedd15;
+    left:200px;
+    transition:5s;
+    top:0;
+  }
+  .circle:nth-child(3):hover{
+    background-color:red;
+    top:-20px;
+  }
+
+  #badge{
+    background-color:#ffc000;
+    width:56px;
+    height:56px;
+    color:#485861;
+    margin-left:24px;
+    padding-left:13px;
+    padding-top:18px;
+    box-sizing:border-box;
+    /* padding값은 글자와 박스 사이를 변경해주는데, 이 변경을 밖으로 해주기때문에
+    전체 공간=박스 사이즈가 달라진다. 그래서 안쪽으로 padding을 적용 시켜줘야함
+    =>box-sizing:border-box;
+     */
+   font-size:9px;
+   line-height:11px;
+   position:fixed;
+   top:0;
+   right:24px;
+   font-weight:bold;
+   /* font-wight:bold => 폰트 굵> */
+  }
+
+</style>
+  </head>
+  <body>
+    <!-- 텍스트 영역 -->
+    <div class="text-area">
+      <h1>
+      <div class="volume">vol.4</div>
+      <div class="title">classics
+        <div class="line"></div><br> never<br> get old</div>
+        <!-- 글자를 쓰지 않은 테그에는 세로 공간이 없고 가로공간만 있음, 선 같이
+      <div>테그를 넣어주었더니 글자와 글자 사이에 알 수 없는 공백이 생김
+    잘 모르겠지만 display:inline-block;으로 해결 <공간이 옆으로 이동>
+  display:inline; 이라고 하면 아예 공간이 없어짐(글자공간만 남으니까 아무것도 안쓴 테그는 공간이 없음)
+display:block; 은 마찬가지로 글자사이 여백 그대로 똑같음 -->
+      </h1>
+      <p>we'll make a mobile magazine<br>using html,css only.</p>
+    </div>
+    <!-- 원 -->
+    <div id="circle-wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <!-- 원이 3개니까 3개의 테그로 틀 만들어 주기 -->
+    </div>
+    <!-- 뱃지 -->
+    <div id="badge">
+      Ex-<br>clusive
+      <!-- br 줄바꿈 테그 -->
+    </div>
+
+  </body>
+</html>
